@@ -1,0 +1,135 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>mtak</title>
+    <style type="text/css">
+      pre {
+       color: #FFFFFF;
+      }
+      table.icons {
+       border: solid 1px #FFFFFF;
+       border-collapse: collapse;
+       padding: 2px;
+      }
+      td.icons {
+       border: solid 1px #FFFFFF;
+       border-collapse: collapse;
+       padding: 2px;
+       padding-left: 4px;
+       padding-right: 4px;
+      }
+      ul {
+       margin-top: -2px;
+      }
+      li {
+       margin-top: -3px;
+       margin-left: -20px;
+       color: #FFFFFF;
+      }
+      a {
+       font-family: monospace;
+       color: #FFFFFF;
+       text-decoration: none;
+      }
+      a:hover {
+       text-decoration: underline;
+       color:#999999;
+      }
+      .linkHeader {
+       font-family: monospace;
+       color: #FFFFFF;
+      }
+      .header1 {
+       color: #00ff00;
+      }
+      body {
+       background-color: black;
+       font-family: monospace;
+       color: #FFFFFF;
+      }
+    </style>
+  </head>
+  <body>
+<p>
+<span class="header1">About ip.mtak.nl<br>
+================</span><br>
+ip.mtak.nl is a free service providing you with the IP address that was used to request the page. It's functionality is similar to the likes of whatismyip.com, but fast and ad-free. 
+</p>
+
+<p>
+<span class="header1">IPv4 and IPv6 enabled<br>
+=====================</span><br>
+There are several ways to request your IP address:<br>
+</p>
+<ul>
+ <li>http://ip.mtak.nl/ Automatically selects IPv4 or IPv6 based on your OS's preference (usually IPv6 if available)</li>
+ <li>http://ipv4.mtak.nl/ will return your IPv4 address only</li>
+ <li>http://ipv6.mtak.nl/ will return your IPv6 address only</li>
+</ul>
+<p>
+Due to technical limitations it's not possible to return both your IPv4 and IPv6 address at the same time. If you want to know both addresses, issue two seperate requests.
+</p>
+
+<p>
+<span class="header1">API<br>
+===</span><br>
+There is also an API version available which only returns the IP address (no other HTML). When you request the page http://ip.mtak.nl/ using one of the following User-Agent headers you will automatically get the API version:
+</p>
+<ul>
+ <li>m/curl/i</li>
+ <li>m/wget/i</li>
+ <li>m/lynx/i</li>
+ <li>m/emacs/i</li>
+ <li>m/links/i</li>
+</ul>
+<p>
+You can also explicitly request the API version by requesting http://ip.mtak.nl/api/
+</p>
+
+<p>
+<span class="header1">Script examples<br>
+===============</span>
+<p>
+Bash/Bourne shell<br>
+-----------------<br>
+$ EXTERNAL_IP=`curl -s http://ip.mtak.nl`<br>
+$ echo $EXTERNAL_IP<br>
+203.0.113.1
+</p>
+
+<p>
+Ruby<br>
+----<br>
+require 'net/http'<br>
+external_ip = Net::HTTP.get(URI('http://ip.mtak.nl/api/'))<br>
+</p>
+
+<p>
+Perl<br>
+----<br>
+use LWP::Simple;<br>
+my $external_ip = get 'http://ip.mtak.nl/api/';<br>
+</p>
+
+<p>
+C# (.NET >3.5)<br>
+--------------<br>
+WebClient ipMtakNlClient = new WebClient();<br>
+string externalIp = ipMtakNlClient.DownloadString("http://ip.mtak.nl/api/");<br>
+</p>
+
+<p>
+<span class="header1">Disclaimer<br>
+==========</span><br>
+This service is provided "as is" without any warranty of any kind. I further disclaim any and all implied warranties, conditions or fitness for any particular purpose.<br>
+If you plan to use this service a lot (more than once per hour), please contact me. Excessive usage will be blocked.
+</p>
+
+<p>
+<span class="header1">Contact<br>
+=======</span><br>
+Contact details can be found at <a href="http://mtak.nl">http://mtak.nl/</a>.
+</p>
+  </body>
+</html>
