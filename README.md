@@ -1,5 +1,4 @@
-ip.mtak.nl
-==========
+# ip.mtak.nl
 Note: this code is currently used on ip.mtak.nl and provided for your reference, so no pull requests for generic functionality will be merged.
 
 This page will return the IP address of the client requesting the IP address. This will work for both IPv4 and IPv6 addresses.
@@ -14,8 +13,7 @@ There is also an API version available which only returns the IP address (no oth
 
 You can also explicitly request the API version by requesting http://example.com/api/ (works with symlink in /api) directory.
 
-Installation
-==
+### Installation
 * Clone the repository
 * Create a virtual host (Apache2):
 ```
@@ -44,4 +42,13 @@ chmod 755 /path/to/index.pl
 ```
 * Profit!
 
+## Docker
+A Docker image is available for development or easy deployment. It uses the same codebase as the website. The image can be run with:
+```
+docker run -ti -p8000:80 merijntjetak/ip-lookup
+```
 
+This will expose the service on port 8000.
+
+### Development
+The `make.sh` script is available for building, running and publishing the image. When using the script, make sure to update the variables in the top section.
