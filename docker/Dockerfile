@@ -4,8 +4,8 @@ RUN apt-get update && apt-get install -y apache2
 RUN a2enmod cgi
 
 RUN mkdir -p /var/www/html/api
-ADD ../index.pl /var/www/html/
-ADD ../about.html /var/www/html/
+ADD index.pl /var/www/html/
+ADD about.html /var/www/html/
 RUN chmod +x /var/www/html/index.pl
 RUN ln -s /var/www/html/index.pl /var/www/html/api/index.pl
 
