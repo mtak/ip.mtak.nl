@@ -18,7 +18,7 @@ if [[ "$1" == "build" ]]; then
 
 elif [[ "$1" == "run" ]]; then
   docker run -ti \
-    -p8000:80 \
+    -p9000:80 \
     ${NAMESPACE}/${IMAGENAME}:${VERSION}
 
 elif [[ "$1" == "publish" ]]; then
